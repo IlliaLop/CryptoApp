@@ -114,7 +114,8 @@ namespace ProjectForWork
                 assets = JsonConvert.DeserializeObject<Assets>(sReadData);
             }
             response.Close();
-            var r = e;
+            stream.Dispose();
+            response.Dispose();
             for (int i = 0; i < assets.assets.Count; i++)
             {
                 if (textBox2.Text.ToLower() == assets.assets[i].name.ToLower())
@@ -124,9 +125,6 @@ namespace ProjectForWork
                     Close();
                 }
             }
-
-            stream.Dispose();
-            response.Dispose();
         }
     }
 }

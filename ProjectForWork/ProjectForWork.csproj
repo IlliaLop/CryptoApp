@@ -113,7 +113,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quote.cs" />
     <EmbeddedResource Include="AllInfo.resx">
       <DependentUpon>AllInfo.cs</DependentUpon>
     </EmbeddedResource>

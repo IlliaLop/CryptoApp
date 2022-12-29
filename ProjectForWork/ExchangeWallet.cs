@@ -70,6 +70,8 @@ namespace ProjectForWork
                 assets = JsonConvert.DeserializeObject<Assets>(sReadData);
             }
             response.Close();
+            stream.Dispose();
+            response.Dispose();
             decimal sum = Convert.ToInt32(textBox1.Text) * assets.assets[comboBox1.SelectedIndex].price * WalletsRates[comboBox2.SelectedIndex];
             textBox2.Text = $"{sum}{WalletsSign[comboBox2.SelectedIndex]}";
         }
