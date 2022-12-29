@@ -16,6 +16,8 @@ namespace ProjectForWork
 {
     public partial class AllInfo : Form
     {
+        private Assets assets;
+
         public AllInfo()
         {
             InitializeComponent();
@@ -23,12 +25,10 @@ namespace ProjectForWork
 
         private void AllInfo_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            WindowState = FormWindowState.Maximized;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://cryptingup.com/api/assets/");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream stream = response.GetResponseStream();
-
-            var assets = new Assets();
             using (StreamReader reader = new StreamReader(stream))
             {
                 string sReadData = reader.ReadToEnd();
@@ -47,30 +47,30 @@ namespace ProjectForWork
                     textBox1.AppendText(Environment.NewLine + Environment.NewLine + $"Cryptocurrency: {assets.assets[i].asset_id.ToString()} - {assets.assets[i].name.ToString()}, price: {assets.assets[i].price.ToString()}, volume 24h {assets.assets[i].volume_24h}, change 1h: {assets.assets[i].change_1h}, change 24h: {assets.assets[i].change_24h}, change 7d: {assets.assets[i].change_7d}" + Environment.NewLine + Environment.NewLine);
                 }
             }
+            stream.Dispose();
+            response.Dispose();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             MainPage form = new MainPage();
             form.ShowDialog();
-            this.Close();
+            Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.Lavender)
+            if (BackColor == Color.Lavender)
             {
-                this.BackColor = Color.DarkSlateGray;
-                textBox1.BackColor = Color.SlateBlue;
-                pictureBox1.BackColor = Color.LightGray;
-                button1.BackColor = Color.SlateBlue;
-                button2.BackColor = Color.SlateBlue;
+                BackColor = Color.DarkSlateGray;
+                textBox1.BackColor = Color.Gainsboro;
+                button1.BackColor = Color.Gainsboro;
+                button2.BackColor = Color.Gainsboro;
             }
-            else if (this.BackColor == Color.DarkSlateGray)
+            else if (BackColor == Color.DarkSlateGray)
             {
-                this.BackColor = Color.Lavender;
+                BackColor = Color.Lavender;
                 textBox1.BackColor = Color.White;
-                pictureBox1.BackColor = Color.Black;
                 button1.BackColor = Color.White;
                 button2.BackColor = Color.White;
             }

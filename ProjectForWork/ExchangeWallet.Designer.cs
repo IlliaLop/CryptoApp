@@ -134,7 +134,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::ProjectForWork.Properties.Resources.moon;
             this.pictureBox1.Location = new System.Drawing.Point(958, 11);
             this.pictureBox1.Name = "pictureBox1";

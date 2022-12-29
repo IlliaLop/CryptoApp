@@ -15,6 +15,7 @@ namespace ProjectForWork
 {
     public partial class ExchangesForm : Form
     {
+        private Exchanges exchanges;
         public ExchangesForm()
         {
             InitializeComponent();
@@ -32,14 +33,13 @@ namespace ProjectForWork
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://cryptingup.com/api/exchanges");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream stream = response.GetResponseStream();
-            Exchanges exchanges = new Exchanges();
             using (StreamReader reader = new StreamReader(stream))
             {
                 string sReadData = reader.ReadToEnd();
                 exchanges = JsonConvert.DeserializeObject<Exchanges>(sReadData);
             }
             response.Close();
-            textBox1.Text = "TOP 8 exchanges NOW";
+            textBox1.Text = "TOP 5 exchanges NOW";
             if (exchanges.exchanges.Count == 0)
             {
                 throw new ArgumentException("exchanges cant equals 0");
@@ -58,15 +58,13 @@ namespace ProjectForWork
             if (BackColor == Color.Lavender)
             {
                 BackColor = Color.DarkSlateGray;
-                textBox1.BackColor = Color.SlateBlue;
-                pictureBox1.BackColor = Color.LightGray;
-                button3.BackColor = Color.SlateBlue;
+                textBox1.BackColor = Color.Gainsboro;
+                button3.BackColor = Color.Gainsboro;
             }
-            else if (this.BackColor == Color.DarkSlateGray)
+            else if (BackColor == Color.DarkSlateGray)
             {
                 BackColor = Color.Lavender;
                 textBox1.BackColor = Color.White;
-                pictureBox1.BackColor = Color.Black;
                 button3.BackColor = Color.White;
             }
         }

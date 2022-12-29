@@ -37,16 +37,14 @@ namespace ProjectForWork
             if (BackColor == Color.Lavender)
             {
                 BackColor = Color.DarkSlateGray;
-                pictureBox1.BackColor = Color.LightGray;
-                button2.BackColor = Color.SlateBlue;
-                CryptoBox.BackColor = Color.SlateBlue;
+                button2.BackColor = Color.Gainsboro;
+                CryptoBox.BackColor = Color.Gainsboro;
             }
             else if (BackColor == Color.DarkSlateGray)
             {
                 BackColor = Color.Lavender;
-                pictureBox1.BackColor = Color.Black;
                 button2.BackColor = Color.White;
-                CryptoBox.BackColor = Color.SlateBlue;
+                CryptoBox.BackColor = Color.Gainsboro;
             }
         }
     }

@@ -67,7 +67,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Mongolian Baiti", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(12, 87);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -100,6 +100,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::ProjectForWork.Properties.Resources.search1;
             this.pictureBox2.Location = new System.Drawing.Point(1741, 40);
             this.pictureBox2.Name = "pictureBox2";
@@ -111,7 +112,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::ProjectForWork.Properties.Resources.moon;
             this.pictureBox1.Location = new System.Drawing.Point(1827, 27);
             this.pictureBox1.Name = "pictureBox1";
@@ -125,11 +127,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(1095, 45);
+            this.label2.Location = new System.Drawing.Point(1061, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(318, 20);
+            this.label2.Size = new System.Drawing.Size(345, 20);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Enter name of cryptocurrency(lowercase)";
+            this.label2.Text = "Enter full name of cryptocurrency(lowercase)";
             // 
             // MainPage
             // 

@@ -79,24 +79,26 @@ namespace ProjectForWork
             if (BackColor == Color.Lavender)
             {
                 BackColor = Color.DarkSlateGray;
-                textBox1.BackColor = Color.SlateBlue;
-                pictureBox1.BackColor = Color.LightGray;
-                button1.BackColor = Color.SlateBlue;
-                button2.BackColor = Color.SlateBlue;
-                button3.BackColor = Color.SlateBlue;
-                textBox2.BackColor = Color.SlateBlue;
-                pictureBox2.BackColor = Color.LightGray;
+                textBox1.BackColor = Color.Gainsboro;
+                pictureBox1.BackColor = Color.DarkSlateGray;
+                button1.BackColor = Color.Gainsboro;
+                button2.BackColor = Color.Gainsboro;
+                button3.BackColor = Color.Gainsboro;
+                textBox2.BackColor = Color.Gainsboro;
+                pictureBox2.BackColor = Color.DarkSlateGray;
+                label2.ForeColor = Color.White;
             }
             else if (BackColor == Color.DarkSlateGray)
             {
                 BackColor = Color.Lavender;
                 textBox1.BackColor = Color.White;
-                pictureBox1.BackColor = Color.Black;
+                pictureBox1.BackColor = Color.Transparent;
                 button1.BackColor = Color.White;
                 button2.BackColor = Color.White;
                 button3.BackColor = Color.White;
                 textBox2.BackColor = Color.White;
-                pictureBox2.BackColor = Color.White;
+                pictureBox2.BackColor = Color.Transparent;
+                label2.ForeColor = Color.Black;
             }
         }
 

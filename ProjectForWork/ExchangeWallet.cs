@@ -17,6 +17,7 @@ namespace ProjectForWork
 {
     public partial class ExchangePage : Form
     {
+        private Assets assets;
         string[] wallets = { "USD", "EURO", "UAH", "GBP" };
         decimal[] WalletsRates = { 1, 0.94m, 36.93m, 0.83m };
         string[] WalletsSign = { "$", "€", "₴", "£" };
@@ -31,7 +32,6 @@ namespace ProjectForWork
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://cryptingup.com/api/assets/");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream stream = response.GetResponseStream();
-            var assets = new Assets();
             using (StreamReader reader = new StreamReader(stream))
             {
                 string sReadData = reader.ReadToEnd();
@@ -55,6 +55,8 @@ namespace ProjectForWork
             {
                 comboBox2.Items.Add(wallets[i]);
             }
+            stream.Dispose();
+            response.Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,7 +64,6 @@ namespace ProjectForWork
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://cryptingup.com/api/assets/");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream stream = response.GetResponseStream();
-            var assets = new Assets();
             using (StreamReader reader = new StreamReader(stream))
             {
                 string sReadData = reader.ReadToEnd();
@@ -77,32 +78,36 @@ namespace ProjectForWork
         {
             MainPage form = new MainPage();
             form.ShowDialog();
-            this.Close();
+            Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.Lavender)
+            if (BackColor == Color.Lavender)
             {
-                this.BackColor = Color.DarkSlateGray;
-                textBox1.BackColor = Color.SlateBlue;
-                textBox2.BackColor = Color.SlateBlue;
-                comboBox1.BackColor = Color.SlateBlue;
-                comboBox2.BackColor = Color.SlateBlue;
-                pictureBox1.BackColor = Color.LightGray;
-                button1.BackColor = Color.SlateBlue;
-                button2.BackColor = Color.SlateBlue;
+                BackColor = Color.DarkSlateGray;
+                textBox1.BackColor = Color.Gainsboro;
+                textBox2.BackColor = Color.Gainsboro;
+                comboBox1.BackColor = Color.Gainsboro;
+                comboBox2.BackColor = Color.Gainsboro;
+                button1.BackColor = Color.Gainsboro;
+                button2.BackColor = Color.Gainsboro;
+                label1.ForeColor = Color.White;
+                label2.ForeColor = Color.White;
+                label3.ForeColor = Color.White;
             }
-            else if (this.BackColor == Color.DarkSlateGray)
+            else if (BackColor == Color.DarkSlateGray)
             {
-                this.BackColor = Color.Lavender;
+                BackColor = Color.Lavender;
                 textBox1.BackColor = Color.White;
-                pictureBox1.BackColor = Color.Black;
                 button1.BackColor = Color.White;
                 button2.BackColor = Color.White;
                 textBox2.BackColor = Color.White;
                 comboBox1.BackColor = Color.White;
                 comboBox2.BackColor = Color.White;
+                label1.ForeColor = Color.Black;
+                label2.ForeColor = Color.Black;
+                label3.ForeColor = Color.Black;
             }
         }
     }
