@@ -10,6 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjectForWork
 {
@@ -53,6 +54,26 @@ namespace ProjectForWork
             MainPage form = new MainPage();
             form.ShowDialog();
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.Lavender)
+            {
+                this.BackColor = Color.DarkSlateGray;
+                textBox1.BackColor = Color.SlateBlue;
+                pictureBox1.BackColor = Color.LightGray;
+                button1.BackColor = Color.SlateBlue;
+                button2.BackColor = Color.SlateBlue;
+            }
+            else if (this.BackColor == Color.DarkSlateGray)
+            {
+                this.BackColor = Color.Lavender;
+                textBox1.BackColor = Color.White;
+                pictureBox1.BackColor = Color.Black;
+                button1.BackColor = Color.White;
+                button2.BackColor = Color.White;
+            }
         }
     }
 }
